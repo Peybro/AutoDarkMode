@@ -1,14 +1,13 @@
+const command = 'Set-ItemProperty';
+const path = 'HKCU:/Software/Microsoft/Windows/CurrentVersion/Themes/Personalize';
+
 exports.scripts = {
 	apps: {
-		light:
-			'Set-ItemProperty -Path HKCU:/Software/Microsoft/Windows/CurrentVersion/Themes/Personalize -Name AppsUseLightTheme -Value 1',
-		dark:
-			'Set-ItemProperty -Path HKCU:/Software/Microsoft/Windows/CurrentVersion/Themes/Personalize -Name AppsUseLightTheme -Value 0'
+		light: `${command} -Path ${path} -Name AppsUseLightTheme -Value 1`,
+		dark: `${command} -Path ${path} -Name AppsUseLightTheme -Value 0`
 	},
 	system: {
-		light:
-			'Set-ItemProperty -Path HKCU:/Software/Microsoft/Windows/CurrentVersion/Themes/Personalize -Name SystemUsesLightTheme -Value 1',
-		dark:
-			'Set-ItemProperty -Path HKCU:/Software/Microsoft/Windows/CurrentVersion/Themes/Personalize -Name SystemUsesLightTheme -Value 0'
+		light: `${command} -Path ${path} -Name SystemUsesLightTheme -Value 1`,
+		dark: `${command} -Path ${path} -Name SystemUsesLightTheme -Value 0`
 	}
 };
