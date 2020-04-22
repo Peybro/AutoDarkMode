@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "node index.js",
+		"start": "node ./src/index.js",
 		"apps-light": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe Set-ItemProperty -Path HKCU:/Software/Microsoft/Windows/CurrentVersion/Themes/Personalize -Name AppsUseLightTheme -Value 1",
 		"apps-dark": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe Set-ItemProperty -Path HKCU:/Software/Microsoft/Windows/CurrentVersion/Themes/Personalize -Name AppsUseLightTheme -Value 0",
 		"system-light": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe Set-ItemProperty -Path HKCU:/Software/Microsoft/Windows/CurrentVersion/Themes/Personalize -Name SystemUsesLightTheme -Value 1",
@@ -14,6 +14,7 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"inquirer": "^7.1.0",
 		"powershell": "^2.3.1"
 	}
 }
