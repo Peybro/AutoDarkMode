@@ -13,7 +13,7 @@ const { scripts } = require('./scripts');
 			time.getMinutes()}. Time to...`
 	);
 
-	if (time.getHours() < 7 || time.getHours() > 20) {
+	if (time.getHours() < 7 || time.getHours() >= 20) {
 		console.log('... take care of your eyes ;)');
 		appsMode = new PowerShell(scripts.apps.dark);
 		systemMode = new PowerShell(scripts.system.dark);
