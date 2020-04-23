@@ -4,7 +4,7 @@ const inquirer = require('inquirer');
  * @description 
  */
 module.exports = function setConfig(hostname, config) {
-	console.log("I could not find a setting for your PC in 'pc-config.json'.");
+	console.log("I could not find a setting for your PC.");
 	inquirer
 		.prompt([
 			{
