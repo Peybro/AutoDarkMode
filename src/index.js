@@ -13,7 +13,7 @@ try {
 	config = JSON.parse(fs.readFileSync(path.join(configDir, 'pc-config.json')));
 	//! config = require('./pc-config.json');
 } catch (error) {
-	console.error(error);
+	// console.error(error);
 	console.log('I could not find a setting for your PC.');
 	config = {};
 } finally {

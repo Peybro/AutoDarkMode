@@ -40,7 +40,7 @@ module.exports = function setConfig(hostname, config, configDir, configFile) {
 							JSON.stringify({ ...config, [hostname]: answers }),
 							(err) => {
 								if (err) {
-									console.error(err);
+									// console.error(err);
 									return;
 								}
 								// file written successfully
