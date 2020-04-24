@@ -2,13 +2,15 @@
 	"name": "AutoDarkMode",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "./src/index.js",
+	"bin": "./src/index.js",
 	"scripts": {
 		"start": "node ./src/index.js",
 		"apps-light": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe Set-ItemProperty -Path HKCU:/Software/Microsoft/Windows/CurrentVersion/Themes/Personalize -Name AppsUseLightTheme -Value 1",
 		"apps-dark": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe Set-ItemProperty -Path HKCU:/Software/Microsoft/Windows/CurrentVersion/Themes/Personalize -Name AppsUseLightTheme -Value 0",
 		"system-light": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe Set-ItemProperty -Path HKCU:/Software/Microsoft/Windows/CurrentVersion/Themes/Personalize -Name SystemUsesLightTheme -Value 1",
-		"system-dark": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe Set-ItemProperty -Path HKCU:/Software/Microsoft/Windows/CurrentVersion/Themes/Personalize -Name SystemUsesLightTheme -Value 0"
+		"system-dark": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe Set-ItemProperty -Path HKCU:/Software/Microsoft/Windows/CurrentVersion/Themes/Personalize -Name SystemUsesLightTheme -Value 0",
+		"bin": "pkg -t latest-win --out-path ./bin ./"
 	},
 	"keywords": [],
 	"author": "",
