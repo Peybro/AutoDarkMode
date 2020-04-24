@@ -1,10 +1,12 @@
+const fs = require('fs');
+const path = require('path');
+
 const inquirer = require('inquirer');
 
 /**
  * @description 
  */
-module.exports = function setConfig(hostname, config) {
-	console.log("I could not find a setting for your PC.");
+module.exports = function setConfig(hostname, config, configDir, configFile) {
 	inquirer
 		.prompt([
 			{
@@ -20,20 +22,21 @@ module.exports = function setConfig(hostname, config) {
 						{
 							type    : 'confirm',
 							name    : 'apps',
-							message : 'Do you want your apps to get dark/light?'
+							message : 'Do you want your apps to be affected by auto dark mode?'
 						},
 						{
 							type    : 'confirm',
 							name    : 'system',
-							message : 'Do you want your system to get dark/light?',
-							when    : function(answers) {
-								return answers.apps;
-							}
+							message : 'Do you want your system to be affected by auto dark mode?'
 						}
 					])
 					.then((answers) => {
-						require('fs').writeFile(
-							'./src/pc-config.json',
+						if (!fs.existsSync(configDir)) {
+							fs.mkdirSync(configDir);
+						}
+						fs.writeFile(
+							//! './src/pc-config.json',
+							path.join(configDir, configFile),
 							JSON.stringify({ ...config, [hostname]: answers }),
 							(err) => {
 								if (err) {
@@ -41,16 +44,20 @@ module.exports = function setConfig(hostname, config) {
 									return;
 								}
 								// file written successfully
-								console.log(
-									'Successfully created a configuration for your PC.'
-                                );
-                                // now run the actual program which should work by now
-								require('./setMode')(hostname, require('./pc-config.json'));
+								console.log(`Successfully created '${configFile}' for configuration in '${configDir}'.
+If you want to change it, just change true/false in it or delete '${configFile}' and re-run this program.
+								`);
+								// now run the actual program which should work by now
+								//! require('./setMode')(hostname, require('./pc-config.json'));
+								require('./setMode')(
+									hostname,
+									JSON.parse(fs.readFileSync(path.join(configDir, configFile)))
+								);
 							}
 						);
 					});
 			} else {
-                // quit program
+				// quit program
 				console.log('Bye then :)');
 				process.exit(0);
 			}
