@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 
-const setMode = require('./setMode');
-const setConfig = require('./setConfig');
+import setMode from "./setMode";
+import setConfig from "./setConfig";
 
 const configDir = path.join(process.env.APPDATA, '/AutoDarkMode');
 const configFile = 'config.json';

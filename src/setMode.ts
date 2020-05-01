@@ -7,7 +7,7 @@ const { scripts } = require('./scripts');
  * @param {string} hostname - Name of the PC the setting is for
  * @param {object} config - Parsed JSON object from config-file
  */
-module.exports = function setMode(hostname: string, config: any): void{
+export default function setMode(hostname: string, config: any): void{
 	const time = new Date();
 	let appsMode, systemMode;
 

@@ -3,6 +3,8 @@ const path = require('path');
 
 const inquirer = require('inquirer');
 
+import setMode from "./setMode";
+
 /**
  * Creates (or modifies) a config file and saves in a specific directory.
  * 
@@ -11,12 +13,12 @@ const inquirer = require('inquirer');
  * @param {string} configDir - Directory in which the file shall be saved
  * @param {string} [configFile='config.json'] - Filename of config file ('config.json' if none is given)
  */
-module.exports = function setConfig(
+export default function setConfig(
 	hostname: string,
 	config: object = {},
 	configDir: string,
 	configFile: string = 'config.json'
-): void{
+): void {
 	inquirer
 		.prompt([
 			{
@@ -64,7 +66,7 @@ module.exports = function setConfig(
 								);
 								/** now run the actual program which should work by now */
 								//! require('./setMode')(hostname, require('./pc-config.json'));
-								require('./setMode')(
+								setMode(
 									hostname,
 									JSON.parse(fs.readFileSync(path.join(configDir, configFile)))
 								);
