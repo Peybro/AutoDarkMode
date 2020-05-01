@@ -13,7 +13,7 @@
 **Note:** you need to do this when you want a permanent change `(also best before first useage)`
 
 Besides in the Windows 10 settings you can also change your color theme by typing:
-* System Light: ``npm run system-light`
+* System Light: `npm run system-light`
 * System Dark: `npm run system-dark`
 * Apps Dark: `npm run apps-light`
 * Apps Dark: `npm run apps-dark`
