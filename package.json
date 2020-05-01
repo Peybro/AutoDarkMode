@@ -10,7 +10,8 @@
 		"apps-dark": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe Set-ItemProperty -Path HKCU:/Software/Microsoft/Windows/CurrentVersion/Themes/Personalize -Name AppsUseLightTheme -Value 0",
 		"system-light": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe Set-ItemProperty -Path HKCU:/Software/Microsoft/Windows/CurrentVersion/Themes/Personalize -Name SystemUsesLightTheme -Value 1",
 		"system-dark": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe Set-ItemProperty -Path HKCU:/Software/Microsoft/Windows/CurrentVersion/Themes/Personalize -Name SystemUsesLightTheme -Value 0",
-		"bin": "tsc && pkg -t latest-win --out-path ./bin ./ && node ./dist/copyBinToAutostart.js"
+		"bin": "tsc && pkg -t latest-win --out-path ./bin ./ && node ./copyBinToAutostart.js",
+		"uninstall": "node ./uninstall.js"
 	},
 	"keywords": [],
 	"author": "",

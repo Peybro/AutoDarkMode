@@ -41,6 +41,10 @@ Or... `(No need for node actually)`
 
 Just change the numbers in `./src/setMode.js`, line 21 to whatever time you prefer (**Note: use 24 hr time format**) and rerun `tsc` or `npm start` or `npm run bin`.
 
+### Uninstall
+
+To uninstall created files run ```npm run uninstall```
+
 
 ## License
 
