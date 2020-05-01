@@ -1,9 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 
-const bin_path = path.join(process.env.APPDATA, 'Microsoft/Windows/Start Menu/Programs/Startup/AutoDarkMode.exe');
-const config_path = path.join(process.env.APPDATA, 'AutoDarkMode');
-const config_file = 'config.json';
+const bin_path = path.join(
+	process.env.APPDATA,
+	'Microsoft/Windows/Start Menu/Programs/Startup',
+	require('./settings.json').nameOfExecutableInAutoStartFolder
+);
+const config_path = path.join(process.env.APPDATA, require('./settings.json').configFolder_inAppData);
+const config_file = require('./settings.json').configFile_inConfigFolder;
 
 try {
 	if (fs.existsSync(bin_path)) {

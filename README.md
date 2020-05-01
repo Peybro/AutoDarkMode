@@ -29,17 +29,23 @@ Or use the scripts in "./ps1 scripts" directly.
 
 ### For Auto Change on Startup
 
-Either...
-* Run `npm run bin` for Typescript and exporting to an executable to "./bin" and copying it to the Windows 10 startup folder (You can replace it with a link afterwards if you want)
-Or...
-* Run `tsc` and copy a link of `"./start.bat"` to `"C:\Users\[user]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"`
-Or... `(No need for node actually)`
-* Copy (a link of) `"./ps1 scripts/AutoDarkMode.ps1"` to `"C:\Users\[user]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"`
+* Either... <br>
+--> Run `npm run bin` for Typescript and exporting to an executable to "./bin" and copying it to the Windows 10 startup folder (You can replace it with a link afterwards if you want)
+* Or... <br>
+--> Run `tsc` and copy a link of `"./start.bat"` to `"C:\Users\[user]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"`
+* Or... `(No need for node actually)` <br>
+--> Copy (a link of) `"./ps1 scripts/AutoDarkMode.ps1"` to `"C:\Users\[user]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"`
 
 
 ### Change time in which Dark Mode shall be activated
 
 Just change the numbers in `./src/setMode.js`, line 21 to whatever time you prefer (**Note: use 24 hr time format**) and rerun `tsc` or `npm start` or `npm run bin`.
+
+
+### Change name of executable, config-file name or name of folder in which config-file gets saved
+
+Just change settings in `./settings.json`.
+
 
 ### Uninstall
 

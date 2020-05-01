@@ -1,0 +1,5 @@
+{
+    "configFolder_inAppData": "AutoDarkMode",
+    "configFile_inConfigFolder": "config.json",
+    "nameOfExecutableInAutoStartFolder": "AutoDarkMode.exe"
+}
