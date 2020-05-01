@@ -12,7 +12,7 @@
 
 **Note:** you need to do this when you want a permanent change `(also best before first useage)`
 
-Besides in the Windows 10 settings you can also change your color theme by typing:
+Besides in the Windows 10 settings you can also change your color theme by **(running `tsc` first and then)** typing:
 * System Light: `npm run system-light`
 * System Dark: `npm run system-dark`
 * Apps Dark: `npm run apps-light`
@@ -28,9 +28,18 @@ Or use the scripts in "./ps1 scripts" directly.
 
 
 ### For Auto Change on Startup
+
+Either...
 * Run `npm run bin` for Typescript and exporting to an executable to "./bin" and copying it to the Windows 10 startup folder (You can replace it with a link afterwards if you want)
-* Or copy a link of "./start.bat" to "C:\Users\[user]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
-* Or copy (a link of) "./ps1 scripts/AutoDarkMode.ps1" to "C:\Users\[user]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
+Or...
+* Run `tsc` and copy a link of `"./start.bat"` to `"C:\Users\[user]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"`
+Or... `(No need for node actually)`
+* Copy (a link of) `"./ps1 scripts/AutoDarkMode.ps1"` to `"C:\Users\[user]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"`
+
+
+### Change time in which Dark Mode shall be activated
+
+Just change the numbers in `./src/setMode.js`, line 21 to whatever time you prefer (**Note: use 24 hr time format**) and rerun `tsc` or `npm start` or `npm run bin`.
 
 
 ## License

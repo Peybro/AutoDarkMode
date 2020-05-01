@@ -7,13 +7,13 @@ const { scripts } = require('./scripts');
  * @param {string} hostname - Name of the PC the setting is for
  * @param {object} config - Parsed JSON object from config-file
  */
-export default function setMode(hostname: string, config: any): void{
+export default function setMode(hostname: string, config: any): void {
 	const time = new Date();
 	let appsMode, systemMode;
 
 	const formatTimeDigit = (timeElem: number) =>
 
-			timeElem < 10 ? `0${timeElem}` :
+		timeElem < 10 ? `0${timeElem}` :
 			timeElem;
 	const timeBanner = (time: Date) =>
 		`It's ${formatTimeDigit(time.getHours())}:${formatTimeDigit(time.getMinutes())} - Time to`;
@@ -30,7 +30,7 @@ export default function setMode(hostname: string, config: any): void{
 		if (config[hostname].system) systemMode = new PowerShell(scripts.system.light);
 	}
 
-	[ appsMode, systemMode ].forEach((field: any) => {
+	[appsMode, systemMode].forEach((field: any) => {
 		if (field) {
 			// Handle process errors (e.g. powershell not found)
 			field.on('error', (err: string) => {
