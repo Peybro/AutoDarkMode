@@ -2,17 +2,20 @@ const PowerShell = require('powershell');
 const { scripts } = require('./scripts');
 
 /**
- * @description 
+ * Sets Windows 10 Dark Mode after 8pm and before 7am and Light Mode in between based on a configuration.
+ *
+ * @param {string} hostname - Name of the PC the setting is for
+ * @param {object} config - Parsed JSON object from config-file
  */
-module.exports = function setMode(hostname, config){
+module.exports = function setMode(hostname: string, config: any): void{
 	const time = new Date();
 	let appsMode, systemMode;
 
-	const formatTimeDigit = (timeElem) =>
+	const formatTimeDigit = (timeElem: number) =>
 
 			timeElem < 10 ? `0${timeElem}` :
 			timeElem;
-	const timeBanner = (time) =>
+	const timeBanner = (time: Date) =>
 		`It's ${formatTimeDigit(time.getHours())}:${formatTimeDigit(time.getMinutes())} - Time to`;
 
 	if (time.getHours() < 7 || time.getHours() >= 20) {
@@ -27,10 +30,10 @@ module.exports = function setMode(hostname, config){
 		if (config[hostname].system) systemMode = new PowerShell(scripts.system.light);
 	}
 
-	[ appsMode, systemMode ].forEach((field) => {
+	[ appsMode, systemMode ].forEach((field: any) => {
 		if (field) {
 			// Handle process errors (e.g. powershell not found)
-			field.on('error', (err) => {
+			field.on('error', (err: string) => {
 				console.error(err);
 			});
 
@@ -40,7 +43,7 @@ module.exports = function setMode(hostname, config){
 			// });
 
 			// Stderr
-			field.on('error-output', (data) => {
+			field.on('error-output', (data: string) => {
 				console.error(data);
 			});
 
