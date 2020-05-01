@@ -5,8 +5,8 @@ Automaticallly sets Dark Mode at night and Light Mode on day in Windows 10 on st
 
 ## Prerequisites
 
-* You need to have Typescript installed (globally)
-* You need to have ```pkg``` installed globally if you want to use the executable
+* You need to have <a href="https://www.npmjs.com/package/typescript">Typescript</a> installed (globally)
+* You need to have <a href="https://www.npmjs.com/package/pkg">pkg</a> installed globally if you want to use the executable
 
 ### Manual Setting
 
