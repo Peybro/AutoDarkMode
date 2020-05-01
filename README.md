@@ -8,7 +8,7 @@
 * You need to have <a href="https://www.npmjs.com/package/typescript">Typescript</a> installed (globally)
 * You need to have <a href="https://www.npmjs.com/package/pkg">pkg</a> installed globally `if you want to use the executable`
 
-### Manual Setting
+### Set Manually
 
 **Note:** you need to do this when you want a permanent change `(also best before first useage)`
 
