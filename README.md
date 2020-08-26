@@ -1,6 +1,6 @@
 <b>Note</b>: If you're really looking for a solution and not just a play-around with JavaScript, better go for <a href="https://github.com/Armin2208/Windows-Auto-Night-Mode">Windows-Auto-Night-Mode by Armin2208</a>. 🙂<br>
 
-# AutoDarkMode
+# AutoDarkMode for Win10
 
 (Automaticallly) sets Dark Mode at night and Light Mode on day in Windows 10 on startup.
 
@@ -50,4 +50,4 @@ To uninstall created files run `npm run uninstall`
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the GNU v3 License.
